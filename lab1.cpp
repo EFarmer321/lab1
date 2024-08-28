@@ -36,9 +36,9 @@ public:
 		this->yres = 200;
 		this->w = 20.0f;
 		this->dir = 5.0f;
-		this->r = 0;
+		this->r = 255;
 		this->g = 0;
-		this->b = 255;
+		this->b = 0;
 		this->pos[0] = 0.0f + this->w;
 		this->pos[1] = this->yres / 2.0f;
 		this->lastHit = std::chrono::high_resolution_clock::now();
