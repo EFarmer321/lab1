@@ -11,7 +11,6 @@
 //
 //
 #include <iostream>
-using namespace std;
 #include <stdio.h>
 #include <unistd.h>
 #include <cstdlib>
@@ -117,16 +116,16 @@ X11_wrapper::X11_wrapper()
 	dpy = XOpenDisplay(NULL);
 	if (dpy == NULL)
 	{
-		cout << "\n\tcannot connect to X server\n"
-			 << endl;
+		std::cout << "\n\tcannot connect to X server\n"
+				  << std::endl;
 		exit(EXIT_FAILURE);
 	}
 	Window root = DefaultRootWindow(dpy);
 	XVisualInfo *vi = glXChooseVisual(dpy, 0, att);
 	if (vi == NULL)
 	{
-		cout << "\n\tno appropriate visual found\n"
-			 << endl;
+		std::cout << "\n\tno appropriate visual found\n"
+				  << std::endl;
 		exit(EXIT_FAILURE);
 	}
 	Colormap cmap = XCreateColormap(dpy, root, vi->visual, AllocNone);
