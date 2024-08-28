@@ -76,7 +76,6 @@ public:
 void init_opengl(void);
 void physics(void);
 void render(void);
-float lerp(float a, float b, float t);
 
 int main()
 {
