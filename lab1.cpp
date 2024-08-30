@@ -32,6 +32,7 @@ class Global
 public:
 	Global()
 	{
+		this->speed = 90;
 		this->xres = 400;
 		this->yres = 200;
 		this->w = 20.0f;
@@ -44,6 +45,7 @@ public:
 		this->lastHit = std::chrono::high_resolution_clock::now();
 	}
 
+	int speed;
 	float w;
 	float dir;
 	float pos[2];
@@ -77,8 +79,11 @@ void init_opengl(void);
 void physics(void);
 void render(void);
 
-int main()
+int main(int argc, char *argv[])
 {
+	if (argc >= 2)
+		g.dir = atoi(argv[1]);
+
 	Global();
 	init_opengl();
 	int done = 0;
